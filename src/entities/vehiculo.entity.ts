@@ -1,3 +1,4 @@
+//Importar las dependencias necesarias para definir la entidad Vehiculo
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
 import { TipoVehiculo } from "./tipovehiculo.entity";
 
@@ -49,7 +50,7 @@ export class Vehiculo {
     nullable: true})
     soat: Buffer;
     
-    @ManyToOne(() => TipoVehiculo, (tipoVehiculo) => tipoVehiculo.vehiculos)
+    @ManyToOne(() => TipoVehiculo, (tipo) => tipo.vehiculos)
     @JoinColumn({ name: 'id_tipo'})
     tipoVehiculo: TipoVehiculo;
 }
